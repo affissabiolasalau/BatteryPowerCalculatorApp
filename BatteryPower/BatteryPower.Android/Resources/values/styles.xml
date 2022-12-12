@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+	<style name="MainTheme" parent="Theme.AppCompat.Light.NoActionBar"/>
+
+	<style name="MyTheme.Base" parent="Theme.AppCompat.Light">
+	</style>
+
+	<style name="MyTheme" parent="MyTheme.Base">
+	</style>
+
+
+	<style name="MyCustomTheme" parent="android:Theme.Material.Light">
+		<!-- Customizations go here -->
+	</style>
+	
+	<style name="MyTheme.Splash" parent ="Theme.AppCompat.Light.NoActionBar">
+    <item name="android:windowBackground">@drawable/splash_screen</item>
+    <item name="android:windowNoTitle">true</item>  
+    <item name="android:windowFullscreen">true</item>  
+    <item name="android:windowContentOverlay">@null</item>  
+    <item name="android:windowActionBar">true</item>  
+  </style>
+
+	<!--AlertDialog Colors-->
+	<style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+		<!--buttons-->
+		<item name="colorAccent">#303F9F</item>
+		<!--title-->
+		<item name="android:textColor">#303F9F</item>
+		<!--text-->
+		<item name="android:textColorPrimary">#000000</item>
+		<!--selection list-->
+		<item name="android:textColorTertiary">#000000</item>
+		<!--background-->
+		<item name="android:background">#ffffff</item>
+	</style>
+</resources>

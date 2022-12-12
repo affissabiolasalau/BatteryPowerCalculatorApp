@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:vm="clr-namespace:BatteryPower.ViewModels"
+             x:Class="BatteryPower.Views.ModalPage">
+    <ContentPage.BindingContext>
+        <vm:ModalPageModelView />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Frame Grid.Column="0" Grid.Row="0">
+                    <Label>Loads</Label>
+                </Frame>
+                <Frame Grid.Column="1" Grid.Row="0">
+                    <Label Text="{Binding Loads}" />
+                </Frame>
+
+                <Frame Grid.Column="0" Grid.Row="1">
+                    <Label>Amp Hour</Label></Frame>
+                <Frame Grid.Column="1" Grid.Row="1"></Frame>
+
+                <Frame Grid.Column="0" Grid.Row="2">
+                    <Label>Voltage</Label></Frame>
+                <Frame Grid.Column="1" Grid.Row="2"></Frame>
+
+                <Frame Grid.Column="0" Grid.Row="3">
+                    <Label>Watt Hour</Label></Frame>
+                <Frame Grid.Column="1" Grid.Row="3"></Frame>
+            </Grid>
+            <Button
+                Text="Close"
+                Clicked="Button_Clicked"
+                BackgroundColor="Red"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

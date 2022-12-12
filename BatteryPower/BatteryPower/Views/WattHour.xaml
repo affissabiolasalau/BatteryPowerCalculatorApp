@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BatteryPower.Views.WattHour"
+             Title="Watt Hour (WH) Calculator"
+             Visual="Material">
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <Entry
+                        x:Name="loads" 
+                    Placeholder="Enter Loads Watts"
+                    Keyboard="Numeric"
+                PlaceholderColor="#2196F3"
+                TextColor="#2196F3" 
+                    IsEnabled="True"   
+                        ReturnType="Next"
+                     ClassId="loads"
+                    />
+                <Label Text="Total Loads Watts (?)" Padding="10,2" HorizontalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TotalLoadsWatts" Tapped="TotalLoadsWatts_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Entry x:Name="capacity" 
+                       PlaceholderColor="#2196F3"
+                       TextColor="#2196F3" 
+                       Placeholder="Enter Battery AH" 
+                       Keyboard="Numeric" 
+                       IsEnabled="True" 
+                       VerticalOptions="Fill" 
+                       ReturnType="Next"
+                       ClassId="capacity"/>
+                <Label Text="Total Battery Capacity (?)" 
+                       Padding="10,2" 
+                       HorizontalTextAlignment="End">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer x:Name="TotalBatteryCapacity" Tapped="TotalBatteryCapacity_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                    <Button FontSize="12" 
+                Grid.Row="0" 
+                Grid.Column="0" 
+                Text="100 AH"
+                 BackgroundColor="#2196F3"
+                TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                Clicked="Button_Clicked_3"
+                                               
+                />
+
+                    <Button FontSize="12" Grid.Row="0" Grid.Column="1" Text="150 AH"
+                HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_2"
+                />
+
+                    <Button FontSize="12" Grid.Row="0" Grid.Column="2" Text="200 AH"
+                HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_4"
+                />
+
+                    <Button FontSize="12" Grid.Row="0" Grid.Column="3" Text="300 AH"
+                HorizontalOptions="CenterAndExpand"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_5"
+                />
+
+                    <Button FontSize="12" Grid.Row="1" Grid.Column="0" Text="500 AH"
+                HorizontalOptions="Center"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_6"
+                />
+
+                    <Button FontSize="12" Grid.Row="1" Grid.Column="1" Text="1K AH"
+                HorizontalOptions="Center"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_7"
+                />
+
+                    <Button FontSize="12" Grid.Row="1" Grid.Column="2" Text="2K AH"
+                HorizontalOptions="Center"
+                    BackgroundColor="#2196F3"
+                TextColor="White"
+                    Clicked="Button_Clicked_8"
+                />
+
+                        <Button FontSize="12" Grid.Row="1" 
+                    Grid.Column="3" 
+                    Text="Clear"
+                    BackgroundColor="Crimson"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_9"
+                />
+                    </Grid>
+
+                    <Entry x:Name="voltage" PlaceholderColor="#2196F3"
+                TextColor="#2196F3" Placeholder="Enter Battery Voltage" Keyboard="Numeric" IsEnabled="True" VerticalOptions="Fill" ClassId="voltage"/>
+                    <Label Text="Battery Voltage (?)" Padding="10,2" HorizontalTextAlignment="End">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer x:Name="BatteryVoltage" Tapped="BatteryVoltage_Tapped"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+
+                    <Grid Padding="10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="40" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Button FontSize="12" Grid.Row="0" 
+                    Grid.Column="0" 
+                    Text="12V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_10"
+                />
+                        <Button FontSize="12" Grid.Row="0" 
+                    Grid.Column="1" 
+                    Text="24V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_11"
+                />
+                        <Button FontSize="12" Grid.Row="0" 
+                    Grid.Column="2" 
+                    Text="36V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_12"
+                />
+                        <Button FontSize="12" Grid.Row="0" 
+                    Grid.Column="3" 
+                    Text="48V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_13"
+                />
+                        <Button FontSize="12" Grid.Row="1" 
+                    Grid.Column="0" 
+                    Text="96V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_14"
+                />
+                        <Button FontSize="12" Grid.Row="1" 
+                    Grid.Column="1" 
+                    Text="192V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_15"
+                />
+                        <Button FontSize="12" Grid.Row="1" 
+                    Grid.Column="2" 
+                    Text="384V"
+                    BackgroundColor="#2196F3"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_16"
+                />
+                        <Button FontSize="12" Grid.Row="1" 
+                    Grid.Column="3" 
+                    Text="Clear"
+                    BackgroundColor="Crimson"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_17"
+                />
+                    </Grid>
+                </StackLayout>
+        </ScrollView>
+        
+        <StackLayout 
+            Padding="10"
+                    >
+            <Grid>
+                <Button Grid.Row="0" 
+                    Grid.ColumnSpan="2" 
+                    Text="Calculate"
+                        WidthRequest="1000"
+                    BackgroundColor="SeaGreen"
+                    TextColor="White"
+                HorizontalOptions="CenterAndExpand"
+                    Clicked="Button_Clicked_1"
+                />
+
+                <Button FontSize="12" Grid.Row="0" 
+                    Grid.Column="2" 
+                    Text="Clear All"
+                    BackgroundColor="Crimson"
+                    TextColor="White"
+                HorizontalOptions="Center"
+                    Clicked="Button_Clicked_18"
+                />
+            </Grid>
+        </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

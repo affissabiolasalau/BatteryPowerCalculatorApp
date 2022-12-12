@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BatteryPower.Views.AboutPage"
+             xmlns:vm="clr-namespace:BatteryPower.ViewModels"
+             Title="About">
+    
+    <ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,10,0,0" VerticalOptions="FillAndExpand">
+                    <Image Source="icon.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Padding="20">
+
+                <Label
+                x:Name="loads"
+                Text="Loads"
+                />
+
+                <Label
+                x:Name="capacity"
+                Text="Capacity"
+                />
+
+                <Label
+                x:Name="voltage"
+                Text="Voltage"
+                />
+
+                <Label
+                x:Name="WattHour"
+                Text="Watt Hour"
+                />
+
+                <Label x:Name="about" Text="about"/>
+            </StackLayout>
+        </ScrollView>
+    </Grid>
+
+</ContentPage>
